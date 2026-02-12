@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Exception Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Delivery Exception Management</h1>
+
+    <!-- FORM -->
+    <form id="exceptionForm">
+        <h2>Report Delivery Issue</h2>
+
+        <input type="text" id="deliveryId" placeholder="Delivery ID" required>
+        <input type="text" id="customerName" placeholder="Customer Name" required>
+
+        <select id="issueType" required>
+            <option value="">Select Issue Type</option>
+            <option>Address Not Found</option>
+            <option>Customer Not Available</option>
+            <option>Payment Issue</option>
+            <option>Package Damaged</option>
+        </select>
+
+        <div class="priority">
+            <label>Priority:</label>
+            <label><input type="radio" name="priority" value="Low" required> Low</label>
+            <label><input type="radio" name="priority" value="Medium"> Medium</label>
+            <label><input type="radio" name="priority" value="High"> High</label>
+        </div>
+
+        <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- FILTERS -->
+    <div class="filters">
+        <h2>Filters</h2>
+
+        <select id="filterIssue">
+            <option value="All">All Issue Types</option>
+            <option>Address Not Found</option>
+            <option>Customer Not Available</option>
+            <option>Payment Issue</option>
+            <option>Package Damaged</option>
+        </select>
+
+        <select id="filterStatus">
+            <option value="All">All Status</option>
+            <option>Open</option>
+            <option>Resolved</option>
+        </select>
+    </div>
+
+    <!-- TABLE -->
+    <table>
+        <thead>
+            <tr>
+                <th>Delivery ID</th>
+                <th>Customer Name</th>
+                <th>Issue Type</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
